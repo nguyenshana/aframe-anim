@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- include A-Frame -->
+	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+	<!-- include aframe-extras for animation-mixer -->
+	<script src="js/aframe-extras.js"></script>
+	<!-- include event-set-component -->
+	<script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+
+	<script>
+		AFRAME.registerComponent('animation-clip', {
+			schema: {
+				default: ""
+			},
+			init: function() {
+				var data = this.data;
+				const bot = document.querySelector('#bot');
+
+				this.el.addEventListener('click', function() {
+					console.log("click " + data);
+					bot.setAttribute("animation-mixer",data); 
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<a-scene>
+		<a-assets>
+			<!-- Xbot Asset -->
+      		<!-- <a-asset-item id="" src=""></a-asset-item> -->
+
+      		<!-- Forest Asset -->
+      		<!-- <a-asset-item id="" src=""></a-asset-item> -->
+      		
+      		<!-- Sky Asset -->
+      		<!-- <img id="" src=""> -->
+    	</a-assets>
+
+    	<!-- Camera -->
+
+    	<!-- Sky -->
+
+		<!-- Forest -->
+
+		<!-- Xbot -->
+
+		<!-- Left Button -->
+
+		<!-- Right Button -->
+	</a-scene>
+</body>
+</html>
