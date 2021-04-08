@@ -41,6 +41,7 @@
     	<!-- Camera -->
     	<a-camera position="0 1.6 0">
     		<a-entity 
+    			raycaster="objects: .clickable"
     			position="0 0 -1" 
     			geometry="primitive: sphere; radius: 0.01" 
     			material="color: blue; shader: flat"
@@ -52,6 +53,11 @@
     	<!-- Sky -->
 
 		<!-- Forest -->
+		<a-entity
+			gltf-model="#forest"
+			position="0 -0.5 0"
+			scale="1.5 1.5 1.5"
+		></a-entity>
 
 		<!-- Xbot -->
 		<a-entity
@@ -61,8 +67,33 @@
 		></a-entity>
 
 		<!-- Left Button -->
+		<a-entity
+			class="clickable"
+			text="value: IDLE; align: center; color:black; width: 1; wrapCount: 5"
+			geometry="primitive: plane; width: auto; height: auto;"
+			material="color: pink; visible: true; shader: flat;"
+			position="-2 1.8 -3"
+			scale="1 1 1"
+			rotation="0 45 0"
+			animation-clip="clip: Idle; crossFadeDuration: 0.3"
+			event-set__enter="_event:mouseenter; text.color: red"
+			event-set__leave="_event:mouseleave; text.color: black"
+		></a-entity>
 
 		<!-- Right Button -->
+		<a-entity
+			class="clickable"
+			text="value: DANCE; align: center; color:black; width: 1; wrapCount: 5"
+			geometry="primitive: plane; width: auto; height: auto;"
+			material="color: pink; visible: true; shader: flat;"
+			position="2 1.8 -3"
+			scale="1 1 1"
+			rotation="0 -45 0"
+			animation-clip="clip: Dance; crossFadeDuration: 0.3"
+			event-set__enter="_event:mouseenter; text.color: red"
+			event-set__leave="_event:mouseleave; text.color: black"
+		></a-entity>
+
 	</a-scene>
 </body>
 </html>
