@@ -29,22 +29,36 @@
 	<a-scene>
 		<a-assets>
 			<!-- Xbot Asset -->
-      		<!-- <a-asset-item id="" src=""></a-asset-item> -->
+      		<a-asset-item id="model" src="model.gltf"></a-asset-item>
 
       		<!-- Forest Asset -->
-      		<!-- <a-asset-item id="" src=""></a-asset-item> -->
+      		<a-asset-item id="forest" src="forest/scene.gltf"></a-asset-item>
       		
       		<!-- Sky Asset -->
       		<!-- <img id="" src=""> -->
     	</a-assets>
 
     	<!-- Camera -->
+    	<a-camera position="0 1.6 0">
+    		<a-entity 
+    			position="0 0 -1" 
+    			geometry="primitive: sphere; radius: 0.01" 
+    			material="color: blue; shader: flat"
+    			cursor>
+    			
+    		</a-entity>
+    	</a-camera>
 
     	<!-- Sky -->
 
 		<!-- Forest -->
 
 		<!-- Xbot -->
+		<a-entity
+			gltf-model="#model"
+			position="0 0 -3"
+			animation-mixer="clip: Idle"
+		></a-entity>
 
 		<!-- Left Button -->
 
@@ -52,3 +66,4 @@
 	</a-scene>
 </body>
 </html>
+
